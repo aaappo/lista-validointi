@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lomake — Validointi JavaScriptillä</title>
+  <link rel="stylesheet" href="validointi.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Lomake</h1>
+
+    <form id="kirjautumisformi" novalidate>
+      <div class="field">
+        <label for="nimi">Nimi</label>
+        <input id="nimi" name="nimi" type="text" />
+        <div class="error" data-for="nimi"></div>
+      </div>
+
+      <div class="field">
+        <label for="osote">Osoite</label>
+        <input id="osote" name="osote" type="text" />
+        <div class="error" data-for="osote"></div>
+      </div>
+
+      <div class="field">
+        <label for="maa">Maa</label>
+        <select id="maa" name="maa">
+          <option value="">(Valitse maa)</option>
+          <option value="suomi">Suomi</option>
+          <option value="muu">Muu</option>
+        </select>
+        <div class="error" data-for="maa"></div>
+      </div>
+
+      <div class="field">
+        <label for="postikoodi">Postinumero</label>
+        <input id="postikoodi" name="postikoodi" type="text" />
+        <div class="error" data-for="postikoodi"></div>
+      </div>
+
+      <div class="field">
+        <label for="email">Sähköposti</label>
+        <input id="email" name="email" type="text" />
+        <div class="error" data-for="email"></div>
+      </div>
+
+      <div class="field">
+        <label>Sukupuoli</label>
+        <div class="radio-group">
+          <label><input type="radio" name="sukupuoli" value="mies"> Mies</label>
+          <label><input type="radio" name="sukupuoli" value="nainen"> Nainen</label>
+          <label><input type="radio" name="sukupuoli" value="muu"> Muu</label>
+        </div>
+        <div class="error" data-for="sukupuoli"></div>
+      </div>
+
+      <div class="field">
+        <label>Kieli </label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="kieli" value="suomi"> Suomi</label>
+          <label><input type="checkbox" name="kieli" value="ruotsi"> Muu</label>
+        </div>
+        <div class="error" data-for="language"></div>
+      </div>
+
+      <div class="field">
+        <label for="extra">Lisätietoja (valinnainen)</label>
+        <textarea id="extra" name="extra" rows="4"></textarea>
+      </div>
+
+      <div class="actions">
+        <button type="submit">Tarkista</button>
+        <button type="button" id="resetBtn">Tyhjennä</button>
+      </div>
+
+      <div id="tulos"></div>
+    </form>
+  </main>
+
+  <script src="validointi.js" defer></script>
+</body>
+</html>
